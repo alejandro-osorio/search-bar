@@ -6,7 +6,7 @@ import _ from 'underscore';
 class SearchBar extends React.Component {
   constructor(props){
     super(props);
-    this.state = { searchValue: null };
+    this.state = { searchValue: null, searchResults: null };
     this.onSearchKeyUp = this.onSearchKeyUp.bind(this);
     this.onMakeSearch = this.onMakeSearch.bind(this);
     this.onSearchValueChange = this.onSearchValueChange.bind(this);
@@ -33,7 +33,7 @@ class SearchBar extends React.Component {
     _.map(items.itemsReturned, function(item){
       results.push(item);
     })
-    console.log(results);
+    this.setState({searchResults: results});
   }
 
   onSearchValueChange(e){
@@ -41,10 +41,20 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    var results = this.state.searchResults ? this.state.searchResults : '';
+    var searchResult = _.map(results, function(result){
+      return (<div>
+        {result.name}
+      </div>);
+    })
     return (
       <div>
         <h1>SearchBar</h1>
-        <input type='search' className="searchbar" placeholder="Busque o que quiser!" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
+        <div>
+          <i className='fa fa-search '/>
+          <input type='search' className="searchbar" placeholder="Busque o que quiser!" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
+          <div>{searchResult}</div>
+        </div>
       </div>
     );
   }
