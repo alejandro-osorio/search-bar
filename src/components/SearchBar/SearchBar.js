@@ -10,6 +10,7 @@ class SearchBar extends React.Component {
     this.onSearchKeyUp = this.onSearchKeyUp.bind(this);
     this.onMakeSearch = this.onMakeSearch.bind(this);
     this.onSearchValueChange = this.onSearchValueChange.bind(this);
+    this.onProcessSearchResult = this.onProcessSearchResult.bind(this);
   }
   onSearchKeyUp(){
     if (this.timeout) {
@@ -21,11 +22,18 @@ class SearchBar extends React.Component {
 
   onMakeSearch(){
     this.timeout = null;
-    var results = [];
     gateway.loadProducts(this.state.searchValue)
-      .then((result) =>
-        console.log(result)
+      .then((response) =>
+        this.onProcessSearchResult(response.data['search@alphateam.search-bar']['_page'])
     );
+  }
+
+  onProcessSearchResult(items){
+    var results = [];
+    _.map(items.itemsReturned, function(item){
+      results.push(item);
+    })
+    console.log(results);
   }
 
   onSearchValueChange(e){
