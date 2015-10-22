@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
       </div>);
     })
     return (
-      <div>
+      <div className="searchContainer">
         <h1>SearchBar</h1>
         <div>
           <i className='fa fa-search '/>
