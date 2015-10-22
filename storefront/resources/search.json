@@ -1,4 +1,10 @@
 {
-  "url":"http://portal.vtexcommercestable.com.br/buscaautocomplete/?maxRows=12&productNameContains=prod&suggestionsStack=&an=dreamstore",
-  "cacheDuration": 60
+  "url":"http://portal.vtexcommercestable.com.br/buscaautocomplete",
+  "cacheDuration": 60,
+  "queryString":{
+    "maxRows":"12",
+    "productNameContains":"prod",
+    "suggestionsStack":"",
+    "an":"dreamstore"
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchBar.less';
-import gateway from '../../utils/gateway.js';
+import gateway from '../../utils/gateway';
 
 class SearchBar extends React.Component {
   constructor(props){
