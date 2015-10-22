@@ -1,0 +1,7 @@
+{
+  "assets": [
+    "common.js",
+    "Shelf.js",
+    "editors/index.js"
+  ]
+}

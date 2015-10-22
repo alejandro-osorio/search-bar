@@ -1,5 +1,6 @@
 import React from 'react';
 import './SearchBar.less';
+import gateway from '../../utils/gateway.js';
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -19,7 +20,8 @@ class SearchBar extends React.Component {
 
   onMakeSearch(){
     this.timeout = null;
-    window.alert(this.state.searchValue);
+    var autocomplete = gateway.loadProducts(this.state.searchValue);
+    console.log(autocomplete);
   }
 
   onSearchValueChange(e){

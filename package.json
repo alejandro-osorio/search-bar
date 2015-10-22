@@ -40,5 +40,7 @@
     "prereleasy": "NODE_ENV=production webpack",
     "postreleasy": "vtex publish"
   },
-  "dependencies": {}
+  "dependencies": {
+    "axios":"^0.7.0"
+  }
 }
