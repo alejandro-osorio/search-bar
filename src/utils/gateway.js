@@ -16,11 +16,9 @@ class Gateway {
   }
 
   loadProducts(searchTerm) {
-    axios.get(this.SearchResource, {
+    return axios.get(this.SearchResource, {
       params: { 'productNameContains': searchTerm},
       headers: this.defaultHeaders
-    }).then(function (response) {
-      return response;
     });
   }
 }
