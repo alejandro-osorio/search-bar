@@ -31,7 +31,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div>
-        <h1>My new component SearchBar!</h1>
+        <h1>SearchBar</h1>
         <input type='search' className="searchbar" placeholder="Busque o que quiser!" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
       </div>
     );
