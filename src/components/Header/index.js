@@ -8,7 +8,17 @@ import searchIcon from 'assets/icons/search.svg';
 import cartIcon from 'assets/icons/cart.svg';
 
 class Header extends React.Component {
+
+  state = {
+    searchToggle: false
+  }
+
+  searchTap = () => {
+    this.setState({ searchToggle: !this.state.searchToggle });
+  }
+
   render() {
+
     return (
     <div>
       <div className="Header row-fluid">
@@ -21,7 +31,7 @@ class Header extends React.Component {
             <Link to="home">Fera fashion</Link>
           </h1>
 
-          <div className="col-xs-1">
+          <div className="col-xs-1" onTouchTap={this.searchTap}>
             <SVGIcon className="icon" svg={searchIcon} width={15} height={18} fill="#153243"/>
           </div>
 
@@ -31,7 +41,7 @@ class Header extends React.Component {
         </div>
       </div>
       <div className="search-container">
-        <SearchBar/>
+        <SearchBar visible={this.state.searchToggle}/>
       </div>
     </div>
     );

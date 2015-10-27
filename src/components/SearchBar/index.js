@@ -48,11 +48,11 @@ class SearchBar extends React.Component {
       </div>);
     })
     return (
-      <div className="SearchBar" data-is-visible='true'>
+      <div className="SearchBar" data-is-visible={this.props.visible}>
         <div className="input-container">
           <input type='search' className="search-input" placeholder="Busque o que quiser!" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
           <div className="button-container">
-            <button className="search-button">Buscar</button>
+            <button className="search-button">GO</button>
           </div>
         </div>
         <div>{searchResult}</div>
