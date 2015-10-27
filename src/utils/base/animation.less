@@ -1,0 +1,13 @@
+.anim-dropdown-in(@height: 50px; @timing: 0.4s; @transition) {
+  height: @height;
+  opacity: 1;
+  overflow-y: hidden;
+  transition: height @timing @transition;
+}
+
+.anim-dropdown-out(@height: 50px; @timing: 0.4s; @transition) {
+  height: 0px;
+  opacity: 0;
+  overflow-y: hidden;
+  transition: height @timing @transition;
+}
