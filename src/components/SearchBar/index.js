@@ -55,7 +55,7 @@ class SearchBar extends React.Component {
             <button className="search-button">GO</button>
           </div>
         </div>
-        <div>{searchResult}</div>
+        <div className="search-results">{searchResult}</div>
       </div>
     );
   }
