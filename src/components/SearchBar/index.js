@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchBar.less';
+import './style.less';
 import gateway from '../../utils/gateway';
 import _ from 'underscore';
 
@@ -48,13 +48,14 @@ class SearchBar extends React.Component {
       </div>);
     })
     return (
-      <div className="searchContainer">
-        <h1>SearchBar</h1>
-        <div>
-          <i className='fa fa-search '/>
-          <input type='search' className="searchbar" placeholder="Busque o que quiser!" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
-          <div>{searchResult}</div>
+      <div className="SearchBar">
+        <div className="input-container">
+          <input type='search' className="search-input" placeholder="Busque o que quiser!" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
+          <div className="button-container">
+            <button className="search-button">Buscar</button>
+          </div>
         </div>
+        <div>{searchResult}</div>
       </div>
     );
   }

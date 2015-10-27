@@ -1,0 +1,43 @@
+@import "../../utils/base";
+@import "./variables";
+
+.SearchBar {
+
+  .input-container {
+    height: 40px;
+    margin-top: 40px;
+    background: @gray-solid;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -1px 0px 1px rgba(0,0,0,0.1);
+  }
+
+  .search-input {
+    .v-no-outlines;
+    .v-clean-input;
+    //border: 2px solid darken(#F7F7F7, 15%);
+    //border-right: 0px;
+    //border-top-left-radius: 3.5px;
+    //border-bottom-left-radius: 3.5px;
+    height: 100%;
+    float: left;
+    padding: (@pad * 2) @pad;
+    //margin: (@pad * 0.8) 0px;
+    width: 80%;
+  }
+
+  .button-container {
+    float: left;
+    width: 20%;
+    height: 100%;
+  }
+
+  .search-button {
+    .v-clean-btn;
+    .v-no-outlines;
+    background: @button-color;
+    color: lighten(@button-color, 35%);
+    height: 100%;
+    width: 100%;
+  }
+
+}
