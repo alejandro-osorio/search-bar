@@ -1,7 +1,16 @@
 @import "../../utils/base";
 @import "./variables";
 
+.SearchBar[data-is-visible='false'] {
+  height: 0px;
+  overflow-y: hidden;
+  transition: height 0.4s;
+}
+
 .SearchBar {
+  height: 80px;
+  overflow-y: hidden;
+  transition: height 0.4s;
 
   .input-container {
     height: 40px;
@@ -39,5 +48,4 @@
     height: 100%;
     width: 100%;
   }
-
 }
