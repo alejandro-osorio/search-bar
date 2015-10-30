@@ -1,9 +1,10 @@
 {
   "name": "search-bar",
-  "vendor": "alphateam",
+  "vendor": "vtex",
   "title": "",
   "description": "",
   "version": "0.1.0",
   "dependencies": {
+    "vtex.storefront": "0"
   }
 }
