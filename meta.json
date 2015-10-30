@@ -1,10 +1,9 @@
 {
   "name": "search-bar",
-  "vendor": "vtex",
+  "vendor": "VTEX",
   "title": "",
   "description": "",
   "version": "0.1.0",
   "dependencies": {
-    "vtex.storefront": "0"
   }
 }
