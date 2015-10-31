@@ -2,6 +2,9 @@ import React from 'react';
 import './style.less';
 import gateway from '../../utils/gateway';
 import _ from 'underscore';
+import SVGIcon from 'utils/SVGIcon';
+import closeIcon from 'assets/icons/close_icon.svg';
+import closeImg from 'assets/icons/close_icon.png';
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -50,7 +53,8 @@ class SearchBar extends React.Component {
     return (
       <div className="SearchBar" data-is-visible={this.props.visible}>
         <div className="input-container">
-          <input type='search' className="search-input" placeholder="Busque o que quiser!" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
+          <input type='search' className="search-input" placeholder="Busca" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
+          <button className="close-button"></button>
         </div>
         <div className="search-results">{searchResult}</div>
       </div>

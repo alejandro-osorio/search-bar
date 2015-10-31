@@ -3,9 +3,6 @@ import './style.less';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router';
 import hamburgerIcon from 'assets/icons/hamburger_icon.svg';
-import SVGIcon from 'utils/SVGIcon';
-import searchIcon from 'assets/icons/search.svg';
-import cartIcon from 'assets/icons/cart.svg';
 
 class Header extends React.Component {
 
@@ -41,7 +38,7 @@ class Header extends React.Component {
         </div>
       </div>
       <div className="search-container">
-        <SearchBar visible={this.state.searchToggle}/>
+        <SearchBar visible={this.state.searchToggle} />
       </div>
     </div>
     );
