@@ -22,7 +22,7 @@ class Header extends React.Component {
     return (
     <div>
       <div className="Header row-fluid">
-        <div className="header-container">
+        <div className="header-container" data-is-searched={!this.state.searchToggle}>
           <div className="col-xs-1">
             <SVGIcon className="icon" svg={hamburgerIcon} width={18} height={18} fill="#153243"/>
           </div>
