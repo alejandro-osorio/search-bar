@@ -1,0 +1,6 @@
+{
+  "assets": [
+    "common.js",
+    "editors/index.js"
+  ]
+}
