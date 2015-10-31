@@ -2,7 +2,7 @@ import { actions } from 'sdk';
 import HomePage from './HomePage';
 
 let component = {
-  name: 'HomePage@VTEX.search-bar',
+  name: 'HomePage@alphateam.search-bar',
   constructor: HomePage
 };
 
