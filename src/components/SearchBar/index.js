@@ -43,6 +43,14 @@ class SearchBar extends React.Component {
     this.setState({ searchValue: e.target.value });
   }
 
+  state = {
+    searchInput: this.props.visible
+  }
+
+  closeSearchTap = () => {
+    this.setState({ searchInput: !this.state.searchInput });
+  }
+
   render() {
     var results = this.state.searchResults ? this.state.searchResults : '';
     var searchResult = _.map(results, function(result){
@@ -54,7 +62,7 @@ class SearchBar extends React.Component {
       <div className="SearchBar" data-is-visible={this.props.visible}>
         <div className="input-container">
           <input type='search' className="search-input" placeholder="Busca" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
-          <button className="close-button"></button>
+          <button className="close-button" onTouchTap={this.closeSearchTap}></button>
         </div>
         <div className="search-results">{searchResult}</div>
       </div>
