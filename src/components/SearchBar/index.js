@@ -58,13 +58,32 @@ class SearchBar extends React.Component {
         {result.name}
       </div>);
     })
+
+    let hasResults = true;
+
     return (
       <div className="SearchBar" data-is-visible={this.props.visible}>
         <div className="input-container">
           <input type='search' className="search-input" placeholder="Busca" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
           <button className="close-button" onTouchTap={this.closeSearchTap}></button>
         </div>
-        <div className="search-results">{searchResult}</div>
+        <div className="results-wrapper" data-has-results={hasResults}>
+          <ul className="search-results">
+            {/*<div className="search-item">{searchResult}</div>*/}
+            <li className="search-item">
+              <span className="search-item-copy">iPhone 6</span>
+            </li>
+            <li className="search-item">
+              <span className="search-item-copy">iPhone 5s</span>
+            </li>
+            <li className="search-item">
+              <span className="search-item-copy">Samsung Galaxy S4</span>
+            </li>
+            <li className="search-item-cta">
+              <a href="" className="search-item-link">Ver todos</a>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }

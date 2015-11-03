@@ -2,7 +2,10 @@ import React from 'react';
 import './style.less';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router';
+import SVGIcon from 'utils/SVGIcon';
 import hamburgerIcon from 'assets/icons/hamburger_icon.svg';
+import cartIcon from 'assets/icons/cart.svg';
+import searchIcon from 'assets/icons/search.svg';
 
 class Header extends React.Component {
 
