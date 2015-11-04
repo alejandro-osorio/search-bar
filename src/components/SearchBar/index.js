@@ -2,9 +2,9 @@ import React from 'react';
 import './style.less';
 import gateway from '../../utils/gateway';
 import _ from 'underscore';
-import SVGIcon from 'utils/SVGIcon';
-import closeIcon from 'assets/icons/close_icon.svg';
-import closeImg from 'assets/icons/close_icon.png';
+// import SVGIcon from 'utils/SVGIcon';
+// import closeIcon from 'assets/icons/close_icon.svg';
+// import closeImg from 'assets/icons/close_icon.png';
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -47,17 +47,17 @@ class SearchBar extends React.Component {
     searchInput: this.props.visible
   }
 
-  closeSearchTap = () => {
-    this.setState({ searchInput: !this.state.searchInput });
+  handleTouchTap = () => {
+    this.props.searchTap();
   }
 
   render() {
-    var results = this.state.searchResults ? this.state.searchResults : '';
-    var searchResult = _.map(results, function(result){
-      return (<div>
-        {result.name}
-      </div>);
-    })
+    // var results = this.state.searchResults ? this.state.searchResults : '';
+    // var searchResult = _.map(results, function(result){
+    //   return (<div>
+    //     {result.name}
+    //   </div>);
+    // })
 
     let hasResults = true;
 
@@ -65,7 +65,7 @@ class SearchBar extends React.Component {
       <div className="SearchBar" data-is-visible={this.props.visible}>
         <div className="input-container">
           <input type='search' className="search-input" placeholder="Busca" value={this.state.searchValue} onKeyUp={this.onSearchKeyUp} onChange={this.onSearchValueChange}/>
-          <button className="close-button" onTouchTap={this.closeSearchTap}></button>
+          <button className="close-button" onTouchTap={this.handleTouchTap}></button>
         </div>
         <div className="results-wrapper" data-has-results={hasResults}>
           <ul className="search-results">

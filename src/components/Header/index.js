@@ -41,7 +41,8 @@ class Header extends React.Component {
         </div>
       </div>
       <div className="search-container">
-        <SearchBar visible={this.state.searchToggle} />
+        <SearchBar visible={this.state.searchToggle}
+                   searchTap={this.searchTap} />
       </div>
     </div>
     );
