@@ -5,15 +5,22 @@
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0px -1px 0px 1px rgba(0,0,0,0.1);
   position: fixed;
-  z-index: 999;
+  z-index: 1;
   top: 0;
   width: 100%;
-  height: 40px;
+  height: 55px;
 
   .header-container {
-    padding: 7.5px 0px;
+    padding: 17.5px 0px;
+    opacity: 1;
+    transition: opacity 0.4s;
   }
 
+  .header-container[data-is-searched='false'] {
+    height: 0px;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
   .brand {
     position: relative;
     margin: 0;

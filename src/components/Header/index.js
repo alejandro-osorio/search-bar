@@ -2,10 +2,10 @@ import React from 'react';
 import './style.less';
 import SearchBar from '../SearchBar';
 import { Link } from 'react-router';
-import hamburgerIcon from 'assets/icons/hamburger_icon.svg';
 import SVGIcon from 'utils/SVGIcon';
-import searchIcon from 'assets/icons/search.svg';
+import hamburgerIcon from 'assets/icons/hamburger_icon.svg';
 import cartIcon from 'assets/icons/cart.svg';
+import searchIcon from 'assets/icons/search.svg';
 
 class Header extends React.Component {
 
@@ -22,7 +22,7 @@ class Header extends React.Component {
     return (
     <div>
       <div className="Header row-fluid">
-        <div className="header-container">
+        <div className="header-container" data-is-searched={!this.state.searchToggle}>
           <div className="col-xs-1">
             <SVGIcon className="icon" svg={hamburgerIcon} width={18} height={18} fill="#153243"/>
           </div>
@@ -41,7 +41,8 @@ class Header extends React.Component {
         </div>
       </div>
       <div className="search-container">
-        <SearchBar visible={this.state.searchToggle}/>
+        <SearchBar visible={this.state.searchToggle}
+                   searchTap={this.searchTap} />
       </div>
     </div>
     );
