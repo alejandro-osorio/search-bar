@@ -53,12 +53,20 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    // var results = this.state.searchResults ? this.state.searchResults : '';
-    // var searchResult = _.map(results, function(result){
-    //   return (<div>
-    //     {result.name}
-    //   </div>);
-    // })
+    var results = this.state.searchResults ? this.state.searchResults : '';
+    var searchResult = _.map(results, function(result){
+      return (
+        <li className="SearchResults-item">
+         <span className="search-item-copy">{result.name}</span>
+       </li>
+      );
+    })
+
+    let mockResults = (
+      <li className="SearchResults-item">
+       <span className="search-item-copy">iPhone 6</span>
+     </li>
+    );
 
     let hasResults = true;
 
@@ -69,17 +77,13 @@ class SearchBar extends React.Component {
           <button className="SearchBar-close-button" onTouchTap={this.handleTouchTap}></button>
         </div>
         <ul className="SearchResults" data-has-results={hasResults}>
-          {/*<div className="search-item">{searchResult}</div>*/}
-          <li className="SearchResults-item">
-            <span className="search-item-copy">iPhone 6</span>
-          </li>
-          <li className="SearchResults-item">
-            <span className="search-item-copy">iPhone 5s</span>
-          </li>
-          <li className="SearchResults-item">
-            <span className="SearchResults-item-copy">Samsung Galaxy S4</span>
-          </li>
-          <li className="SearchResults-item-cta">
+          {searchResult}
+          {mockResults}
+          {mockResults}
+          {mockResults}
+          {mockResults}
+          {mockResults}
+          <li className="SearchResults-item-cta" data-has-cta={hasResults}>
             <a href="" className="SearchResults-item-link">Ver todos</a>
           </li>
         </ul>

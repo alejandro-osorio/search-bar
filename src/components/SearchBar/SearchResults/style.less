@@ -33,14 +33,24 @@
     color: #666;
     padding: 7.5px 10px 7.5px 27.5px;
     background: darken(@gray-soft, 2%);
+
+    &[data-has-cta='true'] {
+      opacity: 1;
+      height: 100%;
+    }
+
+    &[data-has-cta='false'] {
+      opacity: 0;
+      height: 0%;
+      overflow-y: hidden;
+    }
   }
 
-  .search-item-link {
+  &-item-link {
     font-weight: 500;
 
     &::after {
       content: ' >>';
     }
   }
-
 }
