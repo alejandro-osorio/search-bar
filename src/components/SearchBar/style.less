@@ -1,25 +1,44 @@
 @import "../../utils/base";
 @import "./variables";
 
-.SearchBar[data-is-visible='false'] {
-  .input-container, .close-button-container {
-    opacity: 0;
-    overflow-y: hidden;
-    transition: opacity 0.4s 0.2s ease;
-  }
+.SearchBar {
+  top: 0px;
 
-  .search-results {
+  &[data-is-visible='false'] {
     height: 0px;
-    opacity: 0;
-    padding-top: 55px;
-    transition: height 0.4s;
-  }
-}
 
-.SearchBar[data-is-visible='true'] {
-  .input-container {
+    .SearchBar-inner, .SearchBar-close-button {
+      opacity: 0;
+      height: 0px;
+      overflow-y: hidden;
+      transition: opacity 0.4s 0.2s ease;
+    }
+
+    .SearchResults {
+      height: 0px;
+      opacity: 0;
+      padding-top: 55px;
+      transition: height 0.4s;
+    }
+  }
+
+  &[data-is-visible='true'] {
+    .SearchBar-inner, .SearchBar-close-button {
+      opacity: 1;
+      transition: opacity 0.4s 0.2s ease;
+    }
+
+    .SearchResults {
+      height: 100%;
+      opacity: 1;
+      padding-top: 55px;
+      transition: height 0.4s;
+    }
+  }
+
+  &-inner {
     height: 55px;
-    z-index: 999;
+    z-index: 9999;
     position: fixed;
     width: 100%;
     opacity: 1;
@@ -44,7 +63,8 @@
     width: 80%;
   }
 
-  .close-button {
+
+  &-close-button {
     .v-clean-btn;
     .v-no-outlines;
     width: 10%;
@@ -59,52 +79,8 @@
     background-size: 15px auto;
     background-position: 50% center;
 
-
     &:hover {
       cursor: pointer;
-    }
-  }
-
-  .results-wrapper[data-has-results='true'] {
-    opacity: 1;
-    height: 100%;
-  }
-
-  .results-wrapper[data-has-results='false'] {
-    opacity: 0;
-    height: 0%;
-    overflow-y: hidden;
-  }
-
-  .search-results {
-    .v-clean-list;
-    padding-top: 55px;
-  }
-
-  .search-item {
-    color: #666;
-    padding: 7.5px 10px 7.5px 27.5px;
-    //border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-
-    &:nth-child(odd) {
-      background: lighten(@gray-soft, 1%);
-    }
-
-    &:nth-child(even) {
-      background: darken(@gray-soft, 0.5%);
-    }
-  }
-
-  .search-item-cta {
-    .search-item;
-    background: darken(@gray-soft, 2%);
-  }
-
-  .search-item-link {
-    font-weight: 500;
-
-    &::after {
-      content: ' >>';
     }
   }
 }

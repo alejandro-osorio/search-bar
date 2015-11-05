@@ -1,0 +1,46 @@
+@import "../../../utils/base";
+@import "../variables";
+
+.SearchResults {
+  .v-clean-list;
+  padding-top: 55px;
+
+  &[data-has-results='true'] {
+    opacity: 1;
+    height: 100%;
+  }
+
+  &[data-has-results='false'] {
+    opacity: 0;
+    height: 0%;
+    overflow-y: hidden;
+  }
+
+  &-item {
+    color: #666;
+    padding: 7.5px 10px 7.5px 27.5px;
+
+    &:nth-child(odd) {
+      background: lighten(@gray-soft, 1%);
+    }
+
+    &:nth-child(even) {
+      background: darken(@gray-soft, 0.5%);
+    }
+  }
+
+  &-item-cta {
+    color: #666;
+    padding: 7.5px 10px 7.5px 27.5px;
+    background: darken(@gray-soft, 2%);
+  }
+
+  .search-item-link {
+    font-weight: 500;
+
+    &::after {
+      content: ' >>';
+    }
+  }
+
+}
